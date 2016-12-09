@@ -1,0 +1,56 @@
+.header-main
+  height: 100vh
+  width: 100%
+  min-height: 720px
+  background:
+    image: url("/img/1.jpg")
+    repeat: no-repeat
+    size: cover
+    position: center 100%
+  +breakpoint(medium)
+    background:
+      position: 0 0
+      size: contain
+  +breakpoint(xlarge)
+    background:
+      position: 50% 100%
+      size: cover
+
+.header-main__title
+  text-align: center
+  padding-top: 6rem
+  padding-bottom: 2rem
+  color: #F0F8FF
+  padding-right: 24rem
+
+.header-main__text
+  text-align: justify
+
+.header-main__subtitle
+  color: #fd5259
+  text-align: center
+
+button.header-main__button
+  background-color: red
+  opacity: 0.8
+  border-radius: 5px
+  height: 5rem
+  width: 30rem
+  font-size: 24px
+  color: white
+  font-family: Open Sans
+
+.header-main__text
+  font-size: 20px
+  color: #F0F8FF
+  font-family: Open Sans
+  text-align: center
+  padding-right: 5rem
+  padding-top: 2rem
+
+.header-main__tel
+  font-size: 42px
+  color: #F0F8FF
+  font-family: Open Sans
+  text-align: center
+  padding-right: 5rem
