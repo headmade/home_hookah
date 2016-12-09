@@ -3,22 +3,29 @@
   form(data-form='')
     .row
       .columns.small-12
-        //- select(name='type')
-        //-   option Кальян
-        //-   option Супер Кальян
+        select(name='type')
+          option 690 рублей 1 чаша 1,5 часа
+          option 950 рублей 2 чаши 2 часа
+          option 1200 рублей 3 чаши 5 часов
+          option 1650 рублей 5 чаш на ночь
+          option 1950 рублей 5 чаш за город
     .row
       .columns.small-6
+        .form_name
         label(for='name') Имя
         input#name(name='name', required, type="text")
       .columns.small-6
+        .form_tel
         label(for='phone') Телефон
         input#phone(name='phone', required, type="text")
     .row
       .columns.small-12
+        .form_adress
         label(for='address') Адрес
         input#address(name='address', type="text")
     .row
       .columns.small-12
+        .form_comment
         label(for='comment') Комментарий
         textarea#comment(name='comment', type="text")
     .row
