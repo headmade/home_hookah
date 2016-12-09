@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var $remodalInst = $('[data-remodal-id=modal]').remodal();
   var $remodalSuccessInst = $('[data-remodal-id=modal-success]').remodal();
 
+  var phoneMask = new Inputmask("+7(999)999-99-99");
+  phoneMask.mask(document.getElementById("phone"));
+
   var translations = {
     type: 'Наименование',
     name: 'Имя',
@@ -17,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function() {
   $form.on('submit', function(event){
     event.preventDefault();
 
-    var formData = $form.serializeArray()
-    var message = "-------------\nНовый заказ:\n\n"
+    var formData = $form.serializeArray();
+    var message = "-------------\nНовый заказ:\n\n";
 
     $.each(formData, function(index, field){
       if (!field.value) { return false }
-      message += translations[field.name] + ": " + field.value + '\n\n'
+      message += translations[field.name] + ": " + field.value + '\n\n';
     });
 
     $.ajax({
