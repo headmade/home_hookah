@@ -1,0 +1,27 @@
+.remodal(data-remodal-id='modal')
+  button.remodal-close(data-remodal-action='close')
+  form(data-form='')
+    .row
+      .columns.small-12
+        //- select(name='type')
+        //-   option Кальян
+        //-   option Супер Кальян
+    .row
+      .columns.small-6
+        label(for='name') Имя
+        input#name(name='name', required, type="text")
+      .columns.small-6
+        label(for='phone') Телефон
+        input#phone(name='phone', required, type="text")
+    .row
+      .columns.small-12
+        label(for='address') Адрес
+        input#address(name='address', type="text")
+    .row
+      .columns.small-12
+        label(for='comment') Комментарий
+        textarea#comment(name='comment', type="text")
+    .row
+      .columns.small-12
+        button(type='submit') Отправить
+

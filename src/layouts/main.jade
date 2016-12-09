@@ -3,6 +3,9 @@ html(lang="ru")
 head
   meta(charset="UTF-8")
   meta(content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name="viewport")
+
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.css")
+  link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal-default-theme.min.css")
   link(rel="stylesheet", href="css/style.css")
   title Home hookah
 body
@@ -10,4 +13,8 @@ body
   main
     block content
   include ../partials/footer.jade
-  script(src="js/app.js")
+  include ../partials/remodal.jade
+  include ../partials/remodal-success.jade
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js")
+  script(src="/js/app.js")
