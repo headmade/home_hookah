@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   var $remodalInst = $('[data-remodal-id=modal]').remodal();
   var $remodalSuccessInst = $('[data-remodal-id=modal-success]').remodal();
+  var $remodalErrorInst = $('[data-remodal-id=modal-error]').remodal();
 
   var phoneMask = new Inputmask("+7(999)999-99-99");
   phoneMask.mask(document.getElementById("phone"));
@@ -39,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
         $remodalSuccessInst.open()
       },
       error: function(error){
+        $remodalInst.close()
+        $remodalErrorInst.open()
       }
     });
 
