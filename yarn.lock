@@ -2500,6 +2500,14 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
+jquery, jquery@*:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
+
+jquery.inputmask:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/jquery.inputmask/-/jquery.inputmask-3.3.3.tgz#0b1a4ec231f544150ef831dcf727002a91f7f6ac"
+
 jquery@^2.2.0:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
@@ -3572,6 +3580,12 @@ regjsparser@^0.1.4:
   resolved "https://registry.yarnpkg.com/regjsparser/-/regjsparser-0.1.5.tgz#7ee8f84dc6fa792d3fd0ae228d24bd949ead205c"
   dependencies:
     jsesc "~0.5.0"
+
+remodal:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/remodal/-/remodal-1.1.0.tgz#588a1567c786d6d7ea2633df5704f850bfa52cb7"
+  dependencies:
+    jquery "*"
 
 repeat-element@^1.1.2:
   version "1.1.2"

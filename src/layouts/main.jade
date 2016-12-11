@@ -3,9 +3,6 @@ html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name="viewport")
-
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.css")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal-default-theme.min.css")
     link(rel="stylesheet", href="css/style.css")
     title Home hookah
   body
@@ -16,16 +13,5 @@ html(lang="ru")
     include ../partials/remodal.jade
     include ../partials/remodal-success.jade
     include ../partials/remodal-error.jade
-
-    script.
-      window.REMODAL_GLOBALS = {
-        DEFAULTS: {
-          hashTracking: false
-        }
-      };
-
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/inputmask/inputmask.min.js")
 
     script(src="/js/app.js")

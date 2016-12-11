@@ -1,7 +1,12 @@
+import $ from 'jquery'
+import Remodal from 'remodal'
+import Inputmask from 'jquery.inputmask/dist/inputmask/inputmask.js'
+
 document.addEventListener("DOMContentLoaded", function() {
-  var $remodalInst = $('[data-remodal-id=modal]').remodal();
-  var $remodalSuccessInst = $('[data-remodal-id=modal-success]').remodal();
-  var $remodalErrorInst = $('[data-remodal-id=modal-error]').remodal();
+  var remodalOptions = {hashTracking: false}
+  var $remodalInst = $('[data-remodal-id=modal]').remodal(remodalOptions);
+  var $remodalSuccessInst = $('[data-remodal-id=modal-success]').remodal(remodalOptions);
+  var $remodalErrorInst = $('[data-remodal-id=modal-error]').remodal(remodalOptions);
 
   var phoneMask = new Inputmask("+7(999)999-99-99");
   phoneMask.mask(document.getElementById("phone"));
