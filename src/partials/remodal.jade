@@ -11,24 +11,33 @@
           option 1950 рублей 5 чаш за город
     .row
       .columns.small-6
-        .form_name
-        label(for='name') Имя
-        input#name(name='name', required, type="text")
+        .form__name
+          .form__name--text
+            label(for='name') Имя
+          .form__name--input
+            input#name(name='name', required, type="text")
       .columns.small-6
-        .form_tel
-        label(for='phone') Телефон
-        input#phone(name='phone', required, type="text")
+        .form__tel
+          .form__tel--text
+            label(for='phone') Телефон
+          .form__tel--input
+            input#phone(name='phone', required, type="text")
+    .row.align-center
+      .columns.small-12
+        .form__address
+          .form__address--text
+            label(for='address') Адрес
+          .form__address--input
+            input#address.aaa(name='address', type="text")
     .row
       .columns.small-12
-        .form_adress
-        label(for='address') Адрес
-        input#address(name='address', type="text")
-    .row
-      .columns.small-12
-        .form_comment
-        label(for='comment') Комментарий
-        textarea#comment(name='comment', type="text")
-    .row
-      .columns.small-12
-        button(type='submit') Отправить
+        .form__comment
+          .form__comment--text
+            label(for='comment') Комментарий
+          .form__comment--input
+            textarea#comment.aaa(name='comment', type="text")
+    .row.align-center
+      .columns.small-12.medium-6
+        .form__send
+          button(type='submit') Отправить
 
