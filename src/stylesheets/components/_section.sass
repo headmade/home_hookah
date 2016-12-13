@@ -15,12 +15,21 @@
     background:
       position: 50% 100%
       size: cover
+  +breakpoint(small only)
+    background:
+      image: url("/img/1.jpg")
+      repeat: no-repeat
+      size: cover
+      position: 77%
+    height: 80%
 
 .header-main__title
   text-align: center
   padding-top: 6rem
   padding-bottom: 2rem
   color: #F0F8FF
+  +breakpoint(small only)
+    padding-top: 0
 
 .header-main__text
   text-align: justify
@@ -40,14 +49,16 @@ button.header-main__button
     repeat: no-repeat
     size: cover
     position: center 100%
-  // background-color: red
-  // opacity: 0.8
-  // border-radius: 5px
   height: 5rem
   width: 30rem
   font-size: 24px
   color: white
   font-family: Open Sans
+  +breakpoint(small)
+    width: 22rem
+    height: 3rem
+    background-size: contain
+
 
 .header-main__list
   font-size: 20px
@@ -57,24 +68,22 @@ button.header-main__button
   // padding-right: 5rem
   padding-top: 2rem
 
+
 button.header-main__instagram
   width: 2rem
 
 button.header-main__vk
   width: 2rem
+  +breakpoint(small only)
+    margin-left: 8rem
 
 .header--main__icon
   padding-right: 2rem
   display: inline-block
   float: left
 
-// .header-main__instagram
-//   display: inline-block
-//   float: left
-// .header-main__vk
-//   display: inline-block
-//   float: left
-
+.header-main__instagram
+  margin-bottom: 2rem
 
 
 

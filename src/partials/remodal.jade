@@ -9,14 +9,14 @@
           option 1200 рублей 3 чаши 5 часов
           option 1650 рублей 5 чаш на ночь
           option 1950 рублей 5 чаш за город
-    .row
-      .columns.small-6
+    .row.align-center
+      .columns.small-12.medium-6
         .form__name
           .form__name--text
             label(for='name') Имя
           .form__name--input
             input#name(name='name', required, type="text")
-      .columns.small-6
+      .columns.small-12.medium-6 
         .form__tel
           .form__tel--text
             label(for='phone') Телефон
@@ -38,6 +38,5 @@
             textarea#comment.aaa(name='comment', type="text")
     .row.align-center
       .columns.small-12.medium-6
-        .form__send
-          button(type='submit') Отправить
+        button.form__send(type='submit') Отправить
 
