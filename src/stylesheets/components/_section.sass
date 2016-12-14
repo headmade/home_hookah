@@ -9,8 +9,12 @@
     position: center 100%
   +breakpoint(medium)
     background:
-      position: 0 0
-      size: contain
+      image: url("/img/1.jpg")
+      repeat: no-repeat
+      size: cover
+      position: 77%
+    // height: 80%
+    padding-top: 6rem
   +breakpoint(xlarge)
     background:
       position: 50% 100%
@@ -29,6 +33,8 @@
   padding-bottom: 2rem
   color: #F0F8FF
   +breakpoint(small only)
+    padding-top: 0
+  +breakpoint(medium only)
     padding-top: 0
 
 .header-main__text
@@ -54,10 +60,15 @@ button.header-main__button
   font-size: 24px
   color: white
   font-family: Open Sans
-  +breakpoint(small)
+  +breakpoint(small only)
     width: 22rem
     height: 3rem
     background-size: contain
+  +breakpoint(medium only)
+    width: 30rem
+    height: 5rem
+    background-size: contain
+    margin-left: 2rem
 
 
 .header-main__list
@@ -67,6 +78,8 @@ button.header-main__button
   text-align: center
   // padding-right: 5rem
   padding-top: 2rem
+  +breakpoint(medium only)
+
 
 
 button.header-main__instagram
