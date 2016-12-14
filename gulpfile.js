@@ -7,6 +7,10 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload,
     source      = require('vinyl-source-stream'),
     rimraf      = require('rimraf'),
+    ENV_DEV     = require('./env.dev.json'),
+    ENV         = require('./env.json'),
+    replace     = require('gulp-replace'),
+    args        = require('yargs').argv,
 
     // JS
     babel       = require('gulp-babel'),
@@ -78,11 +82,26 @@ gulp.task('sass:build', function () {
 });
 
 gulp.task('js:build', function () {
+  // TODO REFACTOR
+  var env = args.env || 'dev',
+  patterns = {
+    dev: {
+      BOT_API_KEY: ENV_DEV.BOT_API_KEY,
+      CHAT_ID: ENV_DEV.CHAT_ID
+    },
+    prod: {
+      BOT_API_KEY: ENV.BOT_API_KEY,
+      CHAT_ID: ENV.CHAT_ID
+    }
+  };
+
   return browserify({entries: [path.source.js]})
   .transform(babelify, {presets: ["es2015"]})
   .bundle()
   .on('error', errorHandler)
   .pipe(source('app.js'))
+  .pipe(replace('@@BOT_API_KEY', patterns[env]['BOT_API_KEY']))
+  .pipe(replace('@@CHAT_ID', patterns[env]['CHAT_ID']))
   .pipe(gulp.dest(path.build.js))
   .pipe(reload({stream: true}));
 });
@@ -108,7 +127,7 @@ gulp.task('build', [
 ]);
 
 // Watchers
-gulp.task('watch', function(){
+gulp.task('watch', function() {
   watch([path.watch.jade], function(event, cb) {
     gulp.start('jade:build');
   });
@@ -149,3 +168,11 @@ gulp.task('clean', function (cb) {
 
 // Gulp global task
 gulp.task('default', ['build', 'webserver', 'watch']);
+
+gulp.task('deploy', ['build'], function() {
+  return gulp.src('build/**/*')
+    .pipe(ghPages({
+      remoteUrl: env.DEPLOY_URL,
+      branch: 'master'
+    }))
+});

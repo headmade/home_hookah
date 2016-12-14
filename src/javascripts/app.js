@@ -1,7 +1,6 @@
 import $ from 'jquery'
 import Remodal from 'remodal'
 import Inputmask from 'jquery.inputmask/dist/inputmask/inputmask.js'
-import ENV from '../../env.js'
 
 document.addEventListener("DOMContentLoaded", function() {
   var remodalOptions = {hashTracking: false}
@@ -21,8 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   var $form = $('[data-form]');
-  var BOT_API_KEY = '319249234:AAF-N4gpOGzi6ssvpmQElneX3GGuT33yW7U';
-  var CHAT_ID = 102286203;
 
   $form.on('submit', function(event){
     event.preventDefault();
@@ -37,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     $.ajax({
       type: "POST",
-      url: "https://api.telegram.org/bot" + ENV.BOT_API_KEY + "/sendMessage",
-      data: JSON.stringify({chat_id: ENV.CHAT_ID, text: message}),
+      url: "https://api.telegram.org/bot" + "@@BOT_API_KEY" + "/sendMessage",
+      data: JSON.stringify({chat_id: "@@CHAT_ID", text: message}),
       contentType: 'application/json',
       success: function(msg){
         $remodalInst.close()
