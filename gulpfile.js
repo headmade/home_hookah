@@ -11,6 +11,7 @@ var gulp        = require('gulp'),
     ENV         = require('./env.json'),
     replace     = require('gulp-replace'),
     args        = require('yargs').argv,
+    ghPages     = require('gulp-gh-pages'),
 
     // JS
     babel       = require('gulp-babel'),
@@ -172,7 +173,7 @@ gulp.task('default', ['build', 'webserver', 'watch']);
 gulp.task('deploy', ['build'], function() {
   return gulp.src('build/**/*')
     .pipe(ghPages({
-      remoteUrl: env.DEPLOY_URL,
+      remoteUrl: ENV.DEPLOY_URL,
       branch: 'master'
     }))
 });
